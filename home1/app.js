@@ -37,15 +37,16 @@ app.get('/product',(req, res) => {
     })
 })
 
-app.get('/product',(req, res) => {
-    db.collection('products').find().toArray((err,result) =>{
+
+app.get('/orders',(req, res) => {
+    db.collection('order').find().toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
     })
 })
 
 app.get('/product/:id',(req, res) => {
-    db.collection('products').find({"category_id":id}).toArray((err,result) =>{
+    db.collection('products').find({"cate_id":id}).toArray((err,result) =>{
         if(err) throw err;
         res.send(result)
     })
